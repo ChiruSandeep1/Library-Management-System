@@ -5,10 +5,8 @@
     }else{
         die("Something went wrong");
     }
-
-    $resultSet = mysqli_query($link,"SELECT vkey, verified FROM std_registration WHERE vkey='$vkey' AND vefified ='no' LIMIT 1");
-    $update= mysqli_query($link, "update std_registration set verified='yes' where vkey='$vkey' LIMIT 1");
-
+    $resultSet = mysqli_query($link,"SELECT vkey, verified FROM t_registration WHERE vkey='$vkey' AND vefified ='no' LIMIT 1");
+    $update= mysqli_query($link, "update t_registration set verified='yes' where vkey='$vkey' LIMIT 1");
     if($update){
         header('location: verification.php');
     }else{
@@ -19,8 +17,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Vefification</title>
 </head>

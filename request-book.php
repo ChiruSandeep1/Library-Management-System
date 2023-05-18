@@ -1,6 +1,6 @@
 <?php 
      session_start();
-    if (!isset($_SESSION["student"])) {
+    if (!isset($_SESSION["teacher"])) {
         ?>
             <script type="text/javascript">
                 window.location="login.php";
@@ -29,24 +29,24 @@
 					</div>
 				</div>
 				<div class="st-issuedBook">
-                    <?php
+                     <?php
 						
-                       $res5 = mysqli_query($link, "select * from std_registration where username='$_SESSION[student]' ");
-                       while($row5 = mysqli_fetch_array($res5)){
+						$res5 = mysqli_query($link, "select * from t_registration where username='$_SESSION[teacher]' ");
+						while($row5 = mysqli_fetch_array($res5)){
                            $name      = $row5['name'];                    
                            $username  = $row5['username'];
                            $email     = $row5['email'];
                            $phone     = $row5['phone']; 
                            $utype     = $row5['utype'];
-                       }
+						}
                     ?>
 					<form action="" method="post" class="issue-content">
 						<table class="table table-bordered table-striped">
 						<?php 
-							
-							if (isset($_POST["submit"])) {
+							if (isset($_POST["submit"])){
 								$bname = $_POST['bname'];
 								$burl = $_POST['burl'];
+								
 								if ($bname == "" | $burl =="" ) {
 									echo "<span style='color: red;'><b>Error !</b> Feild mustn't be empty</span>";
 								}else{
@@ -83,11 +83,12 @@
                                   <input type="text" class="form-control" name="email" value="<?php echo $email; ?>" disabled>
                                 </td>
                             </tr>
-                             <tr>
+                            <tr>
                                 <td>
                                   <input type="text" class="form-control bdr" name="burl" value="" placeholder="Books url">
                                 </td>
-                            </tr> 
+                            </tr>
+                            
                         </table>
                         <input type="submit" name="submit" value="Send Request" class="btn">
 					</form>

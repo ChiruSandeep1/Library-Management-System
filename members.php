@@ -1,6 +1,6 @@
 <?php 
-     session_start();
-     if (!isset($_SESSION["username"])) {
+    session_start();
+    if (!isset($_SESSION["username"])) {
         ?>
             <script type="text/javascript">
                 window.location="login.php";
@@ -23,7 +23,7 @@
 					<div class="col-md-6">
 						<div class="right text-right">
 							<a href="dashboard.php"><i class="fas fa-home"></i>home</a>
-							<span class="disabled">change password</span>
+							<span class="disabled">add user</span>
 						</div>
 					</div>
 				</div>

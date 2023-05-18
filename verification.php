@@ -20,6 +20,7 @@
        p{
            margin-top: 30px;
        }
+
     </style>
 </head>
 <body>
@@ -27,6 +28,7 @@
         <h4>Your Email is verified..</h4>
         <h4>Now your account is under maintenance. After approve your account we will send you a email.</h4>
         <p><b>Thank you...</b></p>
+
     </div>
 
     <script src="inc/js/jquery-2.2.4.min.js"></script>

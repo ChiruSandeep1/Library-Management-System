@@ -1,6 +1,6 @@
 <?php 
      session_start();
-    if (!isset($_SESSION["student"])) {
+    if (!isset($_SESSION["teacher"])) {
         ?>
             <script type="text/javascript">
                 window.location="login.php";
@@ -30,7 +30,7 @@
 				</div>
 				<div class="books">
 					<form action="" method="post" name="form1">
-						<table class="table ">
+						<table class="table">
 							<tr>
 								<td>
 									<input type="text" name="search" class="form-control" placeholder="Enter book name">
@@ -50,7 +50,7 @@
                             while ($row = mysqli_fetch_array($res)){
                                  $i=$i+1;
                                  echo "<td>";
-                                 ?> <a href="../<?php echo $row["books_file"]; ?>" target="_blank"><img src="../../<?php echo $row["books_image"]; ?> " alt=""></a> <?php 
+                               ?> <a href="../../<?php echo $row["books_file"]; ?>" target="_blank"><img src="../../<?php echo $row["books_image"]; ?> " alt=""></a> <?php 
                                  echo "</br>";
                                  echo "</br>";
                                  echo "<b>".$row["books_name"]; "</b>";
@@ -77,7 +77,7 @@
                             while ($row = mysqli_fetch_array($res)){
                                  $i=$i+1;
                                  echo "<td>";
-                                 ?> <a href="../../<?php echo $row["books_file"]; ?>" target="_blank"><img src="../../<?php echo $row["books_image"]; ?> " alt=""></a> <?php
+                                ?> <a href="../../<?php echo $row["books_file"]; ?>" target="_blank"><img src="../../<?php echo $row["books_image"]; ?> " alt=""></a> <?php
                                  echo "</br>";
                                  echo "</br>";
                                  echo "<b>".$row["books_name"]; "</b>";
@@ -91,7 +91,6 @@
                                      echo "<tr>";
                                      $i=0;
                                  }
-
                             }
                             echo "</tr>";
                             echo "</table>";
@@ -104,9 +103,3 @@
 	<?php 
 		include 'inc/footer.php';
 	 ?>
- <script>
-    $(document).ready(function () {
-    $('#dtBasicExample').DataTable();
-    $('.dataTables_length').addClass('bs-select');
-    });
-  </script>

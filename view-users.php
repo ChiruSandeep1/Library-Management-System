@@ -1,15 +1,15 @@
-<?php 
-     session_start();
-     if (!isset($_SESSION["username"])) {
-        ?>
-            <script type="text/javascript">
-                window.location="login.php";
-            </script>
-        <?php
-    }
-    include 'inc/header.php';
-    include 'inc/connection.php';
- ?>
+    <?php
+		 session_start();
+		if (!isset($_SESSION["username"])) {
+            ?>
+                <script type="text/javascript">
+                    window.location="login.php";
+                </script>
+            <?php
+        }
+        include 'inc/header.php';
+        include 'inc/connection.php';
+	 ?>
 	<!--dashboard area-->
 	<div class="dashboard-content">
 		<div class="dashboard-header">
@@ -23,7 +23,7 @@
 					<div class="col-md-6">
 						<div class="right text-right">
 							<a href="dashboard.php"><i class="fas fa-home"></i>home</a>
-							<span class="disabled">change password</span>
+							<span class="disabled">view user</span>
 						</div>
 					</div>
 				</div>
